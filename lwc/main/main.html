@@ -1,0 +1,791 @@
+<template>
+	<template if:true={home}>
+
+		<div class="BI">
+			<div class="nav" >
+				<!--Logo-->
+				<a href="#" class="logo"><span class="tata">Tata </span><span class="motors">Motors</span></a>
+
+				<!--Navbar List-->
+				<ul class="navbar">
+					<li><a href="#home">Home</a></li>
+					<li><a onclick={homTOcar}>Cars</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#blog">Our Blog</a></li>
+					<li>
+						<div class="navbar-button">
+							<a onclick={serFun} >Service</a>
+						</div>
+					</li>
+
+					<li if:false={isLogged}><a onclick={homeTlogin}>Login</a></li>
+					<c-profile if:true={isLogged} message={proData} uemail={unqemail} onlogout={logoutF}></c-profile>
+				</ul>
+			</div>
+
+
+			<!--Home section-->
+			<section class="home" id="home">
+				<div class="video-container">
+					<video autoplay muted loop class="background-video" controls="false">
+						<source src={videocar} type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				<div class="overlay">
+					<div class="slds-grid slds-gutters">
+						<div class="slds-col">
+							<!-- Left Column (Empty in this example) -->
+						</div>
+						<div class="home-text slds-col">
+							<h1>We have Everything <br> your <span>cars</span> Needs</h1>
+							<p class="para-text">Explore our exclusive range of vehicles, meticulously crafted for
+								style, performance, and safety.
+								<br>Discover cutting-edge technology designed to elevate your driving experience.<br> Find the perfect car that suits your lifestyle.</p>
+
+								<!-- Home Button -->
+								<a href="#" class="btn" onclick={openModal}>Get In Touch</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!--cars section-->
+			<section class="cars" id="cars">
+				<div class="car-heading">
+					<span>Car models</span>
+					<h2>We have all types of cars</h2>
+					<p>Everyone wants to be unique. Tata brings your uniqueness. Select Tata and be the one.</p>
+				</div>
+				<!-- Cars container wrapper -->
+				<div class="cars-container-wrapper">
+					<!-- Cars container -->
+					<div class="cars-container">
+						<!-- Car Cards -->
+						<template for:each={carList} for:item="car">
+							<div key={car.id} class="car-card">
+								<img src={car.image} alt={car.name} />
+								<div class="modelname">
+									<h2>{car.name}</h2>
+								</div>
+							</div>
+						</template>
+					</div>
+				</div>
+			</section>
+
+			<!--About-->
+			<section class="about" id="about">
+				<div class="about-container">
+					<div class="about-text">
+						<span>ABOUT US</span>
+						<h2>Affordable Prices With <br> Quality Cars</h2>
+							<p>At Tata Motors, we pride ourselves on delivering exceptional quality vehicles at
+								affordable prices. With a legacy of engineering excellence and a dedication to customer
+								satisfaction, we ensure every vehicle embodies reliability, innovation, and value.
+								Discover our range of cars designed to exceed expectations without exceeding your
+								budget, making luxury and performance accessible to all.</p>
+
+							<!-- About Button -->
+							<a href="#" class="btn">Learn More</a>
+					</div>
+				</div>
+			</section>
+
+
+			<!--parts section-->
+
+			<!-- <section class="parts" id="parts">
+            <div class="parts-heading">
+                <span>What We Offer</span>
+                <h2>Our Cars are Always Excellent</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, fugit hic molestias numquam voluptate, dolores sit dolorem quisquam maiores.</p>
+            </div>-->
+			<!-- Parts Container -->
+			<!-- <div class="parts-container container">
+               
+                <div class="box">
+                    <img src="/img/part1.png" alt="Auto Spare Part">
+                    <h3>Auto Spare Parts</h3>
+                    <span>$130.99</span>
+                    <i class="bx bxs-star">(6 Reviews)</i>
+                    <a href="#" class="btn">Buy Now</a>
+                    <a href="#" class="details">View Details</a>
+                </div>
+             
+                <div class="box">
+                    <img src="/img/part2.png" alt="Auto Spare Part">
+                    <h3>Auto Spare Parts</h3>
+                    <span>$130.99</span>
+                    <i class="bx bxs-star">(6 Reviews)</i>
+                    <a href="#" class="btn">Buy Now</a>
+                    <a href="#" class="details">View Details</a>
+                </div>
+                <div class="box">
+                    <img src="/img/part1.png" alt="Auto Spare Part">
+                    <h3>Auto Spare Parts</h3>
+                    <span>$130.99</span>
+                    <i class="bx bxs-star">(6 Reviews)</i>
+                    <a href="#" class="btn">Buy Now</a>
+                    <a href="#" class="details">View Details</a>
+                </div>
+                <div class="box">
+                    <img src="/img/part1.png" alt="Auto Spare Part">
+                    <h3>Auto Spare Parts</h3>
+                    <span>$130.99</span>
+                    <i class="bx bxs-star">(6 Reviews)</i>
+                    <a href="#" class="btn">Buy Now</a>
+                    <a href="#" class="details">View Details</a>
+                </div>
+                <div class="box">
+                    <img src="/img/part1.png" alt="Auto Spare Part">
+                    <h3>Auto Spare Parts</h3>
+                    <span>$130.99</span>
+                    <i class="bx bxs-star">(6 Reviews)</i>
+                    <a href="#" class="btn">Buy Now</a>
+                    <a href="#" class="details">View Details</a>
+                </div>
+                <div class="box">
+                    <img src="/img/part1.png" alt="Auto Spare Part">
+                    <h3>Auto Spare Parts</h3>
+                    <span>$130.99</span>
+                    <i class="bx bxs-star">(6 Reviews)</i>
+                    <a href="#" class="btn">Buy Now</a>
+                    <a href="#" class="details">View Details</a>
+                </div>
+              
+            </div>
+        </section>  -->
+
+
+			<section class="blog" id="blog">
+				<div class="heading">
+					<span>Blog & News</span>
+					<h2>Our Blog Content</h2>
+
+				</div>
+				<!-- Blog Container -->
+				<div class="blog-container">
+					<!-- Box 1 -->
+					<div class="blog-box">
+						<lightning-card class="box">
+							<img src="https://images.dealersites.cardekho.com/2181/blogs/1681117943.jpg" alt="Car Image" class="card-image">
+                    </lightning-card>
+							<div class="blog-content">
+								<h3>Tata Motors Electric Portfolio in India</h3>
+								<p>Tata Motors is currently dominating the passenger electric vehicle segment in India,
+									thanks to its diverse and promising electric portfolio. The company is currently
+									selling 4 electric cars - Tata Tigor.ev, Tata Tiago.ev, Tata Punch.ev and Tata
+									Nexon.ev.</p>
+							</div>
+					</div>
+					<!-- Box 2 -->
+					<div class="blog-box">
+						<div class="blog-content">
+							<h3>How Tata Is Taking Over The Auto Industry With Its Nexon Cars</h3>
+							<p>The Rise of Tata Motors: A Resilient Journey Tata Motors has weathered the storms of the
+								automotive industry to emerge stronger than ever. The company's commitment to quality,
+								design, and sustainability has found expression in its diverse lineup of vehicles, with
+								the Nexon standing out as a beacon of success.</p>
+						</div>
+						<lightning-card class="box">
+							<img src="https://images.dealersites.cardekho.com/2181/blogs/62097430.png" alt="Car Image" class="card-image">
+                    </lightning-card>
+					</div>
+					<!-- Box 3 -->
+					<div class="blog-box">
+						<lightning-card class="box">
+							<img src="https://images.dealersites.cardekho.com/2181/blogs/2062670552.jpg" alt="Car Image" class="card-image">
+                    </lightning-card>
+							<div class="blog-content">
+								<h3>Driving into the Future: Your One-Stop Destination for Tata Cars</h3>
+								<p>Welcome to "Driving into the Future: Your One-Stop Destination for Tata Cars" blog!
+									We are excited to introduce you to our Tata car dealership, where you can find the
+									latest models of Tata cars, excellent customer service, and competitive pricing.</p>
+							</div>
+					</div>
+				</div>
+			</section>
+
+
+			
+			<!--footer-->
+			<section class="footer">
+				<div class="footer-container">
+					<div class="footer-box">
+						<a href="#" class="logo">Tata<span>Motors</span></a>
+						<div class="social">
+							<ul class="social-icons">
+							<li><a href="https://www.instagram.com/tatamotorsgroup" target="_blank" class="social-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo"  />
+            </a>
+							</li>
+							<li><a href="https://www.facebook.com/TataMotorsGroup" target="_blank" class="social-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo"  />
+            </a>
+							</li>
+							<li><a href="https://www.linkedin.com/company/tata-motors" target="_blank" class="social-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" class="social-logo" />
+            </a>
+							</li>
+							
+						</ul>
+						</div>
+					</div>
+					<div class="footer-box">
+						<h3 style="font-size:30px; font-weight:bold">Legal</h3>
+
+						<a href="#" style="font-size:15px">Home</a>
+						<a href="#" style="font-size:15px">Cars</a>
+						<a href="#" style="font-size:15px">Parts</a>
+						<a href="#" style="font-size:15px">Sales</a>
+					</div>
+					<div class="footer-box">
+						<h3 style="font-size:30px; font-weight:bold">Page</h3>
+						<a href="#" style="font-size:15px">Privacy</a>
+						<a href="#" style="font-size:15px">Refund Policy</a>
+						<a href="#" style="font-size:15px">Cookies Policy</a>
+					</div>
+					<div class="footer-box">
+						<h3 style="font-size:30px; font-weight:bold">Contact</h3>
+
+						<p style="font-size:15px">United States</p>
+						<p style="font-size:15px">Canada</p>
+						<p style="font-size:15px">Japan</p>
+						<p style="font-size:15px">Germany</p>
+					</div>
+				</div>
+
+
+			</section>
+			<div class="copyright">
+				<p style="font-size:20px">© Copyright 2024. All rights reserved. Tata Motors Limited</p>
+			</div>
+
+		</div>
+
+	</template>
+
+	<!-- get in touch -->
+	<c-webtolead if:true={isModalOpen} onclosed={closeModal}></c-webtolead>
+	
+
+	<!-- cars -->
+	<template if:true={carsPage}>
+		<template if:true={prodis}>
+			<div class="nav">
+				<!--Logo-->
+				<a href="#" class="logo"><span class="tata">Tata </span><span class="motors">Motors</span></a>
+				<ul class="navbar">
+					<ul>
+						<li><a onclick={homFun}>Home</a></li>
+					</ul>
+				</ul>
+			</div>
+       <div class="normal">
+    <h1>Your Journey Starts Here!</h1>
+    <p>Explore our extensive inventory of reliable vehicles and drive away with confidence.</p>
+</div>
+
+
+			<div class="background-video-container">
+				<video autoplay muted loop preload="auto" class="background-video">
+					<source src={backgroundVideoUrl} type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+				
+			</div>
+
+			<div class="carClass">
+				<div title="360 Car View" class="light-container">
+					<div class="content360">
+						<h1 style="font-size:25px;font-weight:bold;color:red">Experience Our 360° Car View</h1>
+						<p style="font-size:20px;font-weight:bold;margin-top:10px">Explore every angle of our cars. Drag
+							to rotate and view all details up close. Enjoy high-resolution images with detailed exterior
+							and interior views, providing an interactive and immersive experience</p>
+					</div>
+					<div class="car-view-container">
+						<div class="car-view" onmousedown={startDrag} onmousemove={onDrag} onmouseup={endDrag}
+							onmouseleave={endDrag}>
+							<img src={currentImage} alt="Car 360 view"/>
+                        </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="background">
+
+					<div class="card-container">
+						<template for:each={carProduct} for:item="card">
+							<div key={card.Id} class="card">
+								<div class="card-image">
+									<img src={card.ImageUrl__c} alt={card.title} />
+                        </div>
+									<div class="card-details">
+										<h1 style="color:#000000">{card.Name}</h1>
+										<p style="color:black">Starts from {card.price}</p>
+									</div>
+									<div class="card-buttons">
+
+										<button class="booknow-button" data-id={card.Id} onclick={disTinf}>View Details</button>
+									</div>
+								</div>
+						</template>
+					</div>
+				</div>
+
+				<div id="einstein-bot-container" class="einstein-bot-container">
+					<!-- 
+                <iframe src={visualforceUrl} id="iframe1"  onclick={reszeIframe} >
+            
+                </iframe> -->
+				</div>
+
+
+		</template>
+		<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+		<template if:true={proInf}>
+			<div class="container">
+				<div class="text-section">
+					<template for:each={productInfo} for:item="product">
+
+						<h1 key={product.id}>The New {product.Product2.Name}</h1>
+						<p key={product.id}>
+							{product.Product2.Description}
+						</p>
+					</template>
+					<div class="buttons">
+						<button class="book-now" onclick={homeTlogin2}>Book Now</button>
+						<button class="test-drive" onclick={tdFun}>Schedule a Test Drive</button>
+					</div>
+				</div>
+				<div class="image-section">
+
+					<img src={carImageUrl} alt="Car Image" class="car-image">
+					<div class="color-options">
+						<button class="color-circle" style="background-color: #8B7355;" data-color="brown" onclick={handleColor} ></button>
+						<button class="color-circle" style="background-color: #FFFFFF;" data-color="white" onclick={handleColor}></button>
+						<button class="color-circle" style="background-color: #1E3A5F;" data-color="blue"  onclick={handleColor}></button>
+						<button class="color-circle" style="background-color: #000000;"  data-color="black" onclick={handleColor}></button>
+					</div>
+				</div>
+
+
+			</div>
+			<template if:true={productInfo}>
+				<div class="car-features">
+					<template for:each={productInfo} for:item="carInfo">
+						<div key={carInfo.Id} class="info-items">
+							<!-- <strong>Mileage:</strong> {carInfo.Product2.Name}<br> -->
+							<div class="info-item"><strong>Mileage:</strong>{carInfo.Product2.Mileage__c} km/l</div>
+							<div class="info-item"><strong>Price:</strong> {carInfo.UnitPrice}</div>
+							<div class="info-item"><strong>Type:</strong> Automatic</div>
+							<lightning-button label="Back" onclick={proBackDis} ></lightning-button>
+							
+
+
+                </div>
+					</template>
+				</div>
+			</template>
+		</template>
+
+
+	</template>
+
+	<!-- service -->
+	<template if:true={service}>
+		<div style="background-color:white">
+			<div class="nav">
+				<!--Logo-->
+				<a href="#" class="logo"><span class="tata">Tata </span><span class="motors">Motors</span></a>
+				<ul class="navbar">
+					<li><a onclick={homFun}>Home</a></li>
+					<li><a href="#faqsectionid">Help</a></li>
+					<li><a href="#contact-section">Contact Us</a></li>
+
+				</ul>
+			</div>
+		<div>
+			<c-demo-bot></c-demo-bot>
+		</div>
+		
+
+
+			<div class="Servicecontainer">
+				<div class="bgImage">
+					<img src={image1} alt="Background Image">
+            </div>
+					<lightning-card class="formcard">
+
+						<div class="form">
+
+
+							<form
+								action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DdL000007B0bn"
+								method="POST">
+
+								<input type=hidden name="orgid" value="00DdL000007B0bn">
+								<!-- <input type=hidden name="retURL" value="https://omnicloudsolutions3-dev-ed.develop.lightning.force.com/lightning/page/home"> -->
+								<input type=hidden name="retURL" value="https://omnicloudsolutions3-dev-ed.develop.my.salesforce-sites.com/motorapp#home-1">
+
+	
+								<h2 class="section-title">Personal Details</h2>
+								<div class="form-row">
+									<lightning-input type="text" name="name" label="Name" class="form-item">
+									</lightning-input>
+									<lightning-input type="text" name="phone" label="Mobile No." class="form-item">
+									</lightning-input>
+								</div>
+								<div class="form-row">
+									<lightning-input type="text" label="City" name="City__c" class="form-item">
+									</lightning-input>
+									<lightning-input type="email" label="Email" name="email" class="form-item">
+									</lightning-input>
+								</div>
+
+								<h2 class="section-title">Service Details</h2>
+								<div class="form-row">
+									
+									 <label for="model">Model</label>
+            <select name="Model__c" id="model" class="form-item">
+                <option value="Altroz">Altroz</option>
+                <option value="Celerio">Celerio</option>
+                <option value="Nexon">Nexon</option>
+				<option value="Safari">Safari</option>
+				<option value="Tata EV">Tata EV</option>
+				<option value="Tata Punch">Tata Punch</option>
+				<option value="Tiago">Tiago</option>
+                <!-- Add more options as needed -->
+            </select>
+								</div>
+								<div class="form-row">
+									<lightning-input type="text" label="Registration No." name="Registration_No__c" class="form-item">
+									</lightning-input>
+									<lightning-textarea label="Description" name="Description" class="form-item">
+									</lightning-textarea>
+								</div>
+								<div class="form-row">
+									<label for="serviceType">Service Type</label>
+            <select name="Service_Type__c" id="serviceType" class="form-item">
+                <option value="Air Filter">Air Filter</option>
+                <option value="Battery Test">Battery Test</option>
+                <option value="Brakes">Brakes</option>
+				 <option value="Heating, Ventilation">Heating, Ventilation</option>
+				  <option value="Oil and filter change">Oil and filter change</option>
+				   <option value="spark plug replacement">spark plug replacement</option>
+				   <option value="Tire Rotation">Tire Rotation</option>
+				   <option value="wheel alignment">wheel alignment</option>
+                <!-- Add more options as needed -->
+            </select>
+									<lightning-input type="datetime-local" label="Request Date & Time"
+									name="Request_Date_Time__c" class="form-item"></lightning-input>
+								</div>
+
+								<lightning-button variant="brand" type="submit" label="Book Service"
+									title="Book Service" class="slds-m-top_medium"></lightning-button>
+							</form>
+						</div>
+					</lightning-card>
+
+				</div>
+
+
+
+
+				<h1 style="margin-top:25px ;font-weight:bold; font-size:35px;text-align:center"> Maintainance tips</h1>
+
+				<div class="card-grid">
+
+
+					<lightning-card class="tips-card">
+						<img src={image2} alt="Image 6">
+						<div class="servicedescription">
+							<h1 style="font-weight:bold;font-size:20px">Watch your speed </h1>
+							<h3 style="font-size:15px"> Avoid over-speeding as it can create safety issues and lead to
+								wear and tear of the vehicle. </h3>
+						</div>
+					</lightning-card >
+					<lightning-card class="tips-card">
+						<img src={image3} alt="Image 7">
+						<div class="servicedescription">
+							<h1 style="font-weight:bold;font-size:20px">Keep distance </h1>
+							<h3 style="font-size:15px">Keep safe distance to minimise damage to your vehicle in case of
+								unforeseen situations on the road. </h3>
+						</div>
+					</lightning-card>
+					<lightning-card class="tips-card">
+						<img src={image4} alt="Image 8">
+						<div class="servicedescription">
+							<h1 style="font-weight:bold;font-size:20px">Ensure proper fuel usage </h1>
+							<h3 style="font-size:15px"> Follow periodic prompts from your car to ensure proper fuel
+								usage for better performance. </h3>
+						</div>
+					</lightning-card>
+					<lightning-card class="tips-card"> 
+						<img src={image5} alt="Image 8">
+						<div class="servicedescription">
+							<h1 style="font-weight:bold;font-size:20px">Avoid Potholes </h1>
+							<h3 style="font-size:15px">Watch out for potholes on the road as they damage your vehicle's
+								suspension and compromise safety. </h3>
+						</div>
+					</lightning-card>
+				</div>
+				<br>
+				<!-- qns -->
+			<section class="faq" id="faqsectionid">
+			
+					<div class="containerfaq">
+						<h1 style=" font-size:30px; font-weight:bold">Frequently Asked Questions</h1>
+						<div class="tab">
+							<input type="radio" name="acc" id="acc1">
+							<label for="acc1">
+                        <h2>01</h2>
+                        <h3>How can I book a test drive for a Tata Motors vehicle?</h3>
+                    </label>
+							<div class="content">
+								<p>You can book a test drive for any Tata Motors vehicle through their official website.
+									Simply select the model you're interested in, provide your contact information, and
+									choose a convenient date and time for the test drive.
+								</p>
+							</div>
+						</div>
+						<div class="tab">
+							<input type="radio" name="acc" id="acc2">
+							<label for="acc2">
+                        <h2>02</h2>
+                        <h3>How Safe are electric cars?</h3>
+                    </label>
+							<div class="content">
+								<p>As an electric car company in India, we understand your apprehension about a new kind
+									of powertrain. Ziptron EV architecture has been driven and proven over 1 Billion kms
+									across India and is designed keeping in mind the extreme Indian weather conditions.
+									That being said, the battery pack and motor used in our electric vehicles is IP67
+									certified which makes it weather and worry proof. In fact, our electric vehicle
+									battery technology is so advanced that the battery pack comes with an impact
+									resistant casing.</p>
+							</div>
+						</div>
+						<div class="tab">
+							<input type="radio" name="acc" id="acc3">
+							<label for="acc3">
+                        <h2>03</h2>
+                        <h3>Will any wear and tear parts be covered under AMC?</h3>
+                    </label>
+							<div class="content">
+								<p>Wear and Tear Parts replacement like Clutch Plate, Brake Pads, Brake Disc, Brake
+									Liners, Wiper Blades etc is covered only under Gold, P2P and Protect Plus plans.</p>
+							</div>
+						</div>
+						<div class="tab">
+							<input type="radio" name="acc" id="acc4">
+							<label for="acc4">
+                        <h2>04</h2>
+                        <h3>What are the popular car models offered by Tata Motors?</h3>
+                    </label>
+							<div class="content">
+								<p>Tata Motors offers several popular car models, including the Tata Nexon, Tata
+									Harrier, Tata Safari, Tata Altroz, and Tata Tiago. Each model is designed to cater
+									to different needs and preferences, from compact city cars to robust SUVs.</p>
+							</div>
+						</div>
+						<div class="tab">
+							<input type="radio" name="acc" id="acc5">
+							<label for="acc5">
+                        <h2>05</h2>
+                        <h3>Are Tata Motors vehicles environmentally friendly?</h3>
+                    </label>
+							<div class="content">
+								<p>Yes, Tata Motors is committed to sustainability and offers a range of environmentally
+									friendly vehicles, including electric cars like the Tata Nexon EV and the Tata Tigor
+									EV. These vehicles are designed to reduce carbon emissions and promote green
+									mobility.</p>
+							</div>
+						</div>
+						<div class="tab">
+							<input type="radio" name="acc" id="acc6">
+							<label for="acc6">
+                        <h2>06</h2>
+                        <h3>How can I get my Tata Motors vehicle serviced?</h3>
+                    </label>
+							<div class="content">
+								<p>Tata Motors offers comprehensive service and maintenance facilities at their
+									authorized service centers. You can book a service appointment online or visit the
+									nearest service center for regular maintenance, repairs, and genuine spare parts.
+								</p>
+							</div>
+						</div>
+					
+				</div>
+			</section>
+				<section class="contact-section" id="contact-section">
+					<div class="contact-container">
+						<div class="contact-heading">
+							<h2>Contact Us</h2>
+							<p>If you have any questions or need further information, please feel free to contact us. We
+								are here to help you.</p>
+						</div>
+						<div class="contact-info">
+							<div class="contact-item">
+								<h3 style="color:red">ADDRESS</h3>
+								<p>123 Tata Motors Road, Industrial Area, City, Country</p>
+							</div>
+							<div class="contact-item">
+								<h3 style="color:red">PHONE</h3>
+								<p><a href="tel:+1234567890">+1 234 567 890</a></p>
+							</div>
+							<div class="contact-item">
+								<h3 style="color:red">EMAIL</h3>
+								<p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=statamotors079@2md2a9y7ac1qcv3y7cglt6dwhu4s3kiy988qsiptrglj6yqxxv.dl-7b0bnuac.ind134.case.salesforce.com">statamotors079@gmail.com</a></p>
+							</div>
+						</div>
+
+						<form class="contact-form" onsubmit={handleSubmit}>
+                          <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required onchange={handleChange} data-id="name">
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required onchange={handleChange} data-id="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="3" required onchange={handleChange} data-id="message"></textarea>
+                          </div>
+                          <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+					</div>
+				</section>
+            
+				
+				<footer class="Servicefooter">
+					<div class="left-content">
+						<p style="font-size: 20px; font-weight: bold;padding-top:10px">Need any personal assistance?</p>
+
+						<p style="font-size:15px">Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+						<p style="font-size:15px">Email: <a href="mailto:example@example.com">example@example.com</a>
+						</p>
+					</div>
+					<div class="right-content">
+						<ul class="social-icons">
+							<li><a href="https://www.instagram.com/tatamotorsgroup" target="_blank" class="social-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo"  />
+            </a>
+							</li>
+							<li><a href="https://www.facebook.com/TataMotorsGroup" target="_blank" class="social-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo"  />
+            </a>
+							</li>
+							<li><a href="https://www.linkedin.com/company/tata-motors" target="_blank" class="social-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" class="social-logo" />
+            </a>
+							</li>
+							
+							<!-- Add more social media icons as needed -->
+						</ul>
+					</div>
+					<br>
+				</footer>
+         
+
+
+
+
+
+
+
+			</div>
+	</template>
+
+	<!-- login page -->
+
+<template if:true={loginS}>
+	<template if:true={login}>
+		<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open centered-containerG">
+			<div class="slds-modal__container">
+				<!-- Modal/Popup Header -->
+				<header class="slds-modal__header">
+					<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={loginToNormal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+					<h2 class="slds-text-heading_medium">Login</h2>
+				</header>
+				<!-- <lightning-card title="Login" class="slds-card_custom"> -->
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-input label="Email" type="email" value={email} onchange={handleInputChange1}
+						class="input-field"></lightning-input>
+					<lightning-input label="Password" type="password" value={password} onchange={handleInputChange1}
+						class="input-field"></lightning-input>
+
+					<p class="error">{error}</p>
+				</div>
+				<!-- </lightning-card> -->
+				<footer class="slds-modal__footer">
+					<lightning-button label="Login" onclick={handleLogin} variant="brand" class="slds-m-top_medium">
+					</lightning-button>
+					<lightning-button label="Sign up" onclick={signFuns} variant="brand" class="slds-m-top_medium">
+					</lightning-button>
+					<!-- <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+					<lightning-button variant="brand" label="Submit" onclick={handleSubmit}></lightning-button> -->
+				</footer>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</template>
+	<template if:true={signUp}>
+		<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open centered-containerG">
+			<div class="slds-modal__container">
+				<!-- Modal/Popup Header -->
+				<header class="slds-modal__header">
+					<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeSignUp}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+					<h2 class="slds-text-heading_medium">Sign Up</h2>
+				</header>
+				<!-- <lightning-card title="Sign Up"> -->
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-input label="Name" value={name} onchange={handleInputChangeSign} data-id="name" required>
+					</lightning-input>
+					<lightning-input label="Phone" type="tel" value={phone} onchange={handleInputChangeSign} data-id="phone"
+						required></lightning-input>
+					<lightning-combobox label="Gender" value={gender} options={genderOptions}
+						onchange={handleInputChangeSign} data-id="gender"></lightning-combobox>
+					<lightning-input label="Age" type="number" value={age} onchange={handleInputChangeSign} data-id="age"
+						required></lightning-input>
+					<lightning-input label="Email" type="email" value={email} onchange={handleInputChangeSign}
+						data-id="email" required></lightning-input>
+					<lightning-input label="Password" type="password" value={password} onchange={handleInputChangeSign}
+						data-id="password" required></lightning-input>
+					<lightning-input label="Confirm Password" type="password" value={confirmPassword}
+						onchange={handleInputChangeSign} data-id="confirmPassword" required></lightning-input>
+
+
+				</div>
+				<!-- </lightning-card> -->
+				<footer class="slds-modal__footer">
+					<lightning-button label="Submit" onclick={handleSubmitSign} variant="brand"></lightning-button>
+					<!-- <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+					<lightning-button variant="brand" label="Submit" onclick={handleSubmit}></lightning-button> -->
+				</footer>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</template>
+</template>
+
+	<!-- <c-sign-up-form if:true={signUpForm} onclose={handleChildClose}></c-sign-up-form> -->
+	
+
+	<c-test-drive-form if:true={tdf}  pname={carName} onclose={handleTDC}></c-test-drive-form>
+	<c-end-page if:true={ep} messageep={selectedPId} messagemail={selectedEmail} onendback={endToV}></c-end-page>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <div class="imh">
+        <div class="slds-card__header">
+            <h2 class="slds-card__header-title">Sign Up</h2>
+        </div>
+        <div class="slds-card__body slds-p-around_medium">
+            <lightning-input label="Name" value={name} onchange={handleInputChange} data-id="name" required></lightning-input>
+            <lightning-input label="Phone" type="tel" value={phone} onchange={handleInputChange} data-id="phone" required></lightning-input>
+            <lightning-combobox label="Gender" value={gender} options={genderOptions} onchange={handleInputChange} data-id="gender"></lightning-combobox>
+            <lightning-input label="Age" type="number" value={age} onchange={handleInputChange} data-id="age" required></lightning-input>
+            <lightning-input label="Email" type="email" value={email} onchange={handleInputChange} data-id="email" required></lightning-input>
+            <lightning-input label="Password" type="password" value={password} onchange={handleInputChange} data-id="password" required></lightning-input>
+            <lightning-input label="Confirm Password" type="password" value={confirmPassword} onchange={handleInputChange} data-id="confirmPassword" required></lightning-input>
+
+            <div class="button-container">
+                <lightning-button label="Submit" onclick={handleSubmit} variant="brand"></lightning-button>
+            </div>
+        </div>
+
+    </div>
+</template>

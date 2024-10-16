@@ -1,0 +1,216 @@
+.nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+       
+        width:100%;
+        z-index:1000;
+        padding: 1rem 2rem;
+        background-color:black;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+.logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .logo .tata {
+        color: white; /* Black color for Tata */
+    }
+    
+    .logo .motors {
+        color: #ff6f61; /* Red color for Motors */
+    }
+     .navbar {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .navbar li {
+        display: inline;
+    }
+    
+    .navbar a,
+    .navbar-button lightning-button {
+        text-decoration: none;
+        color:white;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font-family: inherit;
+    }
+   /* Override text color for lightning-button with variant="base" */
+
+
+    
+    .navbar-button lightning-button[variant="brand"]:hover {
+        color: #ff6f61; /* Hover color */
+    }
+    
+    
+    .navbar a:hover,
+    .navbar a.active,
+    .navbar-button lightning-button:hover,
+    .navbar-button lightning-button.active {
+        color: #ff6f61;
+    }
+    
+.step-container1 {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 600px;
+        min-height:400px;
+        margin:50px auto;
+         /* Center the container horizontally */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        background-color: #f9f9f9; /* Light background color */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .step-container1 h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .step-container1 lightning-input {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .proceed-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        background-color: #0070d2; /* Salesforce blue */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .proceed-button:hover {
+        background-color: #005bb5; /* Darker blue on hover */
+    }
+
+    .step-container2 {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        text-align: center;
+        min-height: 400px;
+    }
+
+    .step-container2 h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .step-container2 lightning-input {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .proceed-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        background-color: #0070d2;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .proceed-button:hover {
+        background-color: #005bb5;
+    }
+
+
+.step-container3 {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    .step-container3 h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .step-container3 p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+        color: #555; /* Slightly darker text for readability */
+    }
+
+
+.step-container4 {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    .step-container4 h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .step-container4 p {
+        margin-bottom: 15px;
+        font-size: 1rem;
+        color: #555; /* Slightly darker text for readability */
+    }
+
+    .finish-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        background-color: #0070d2;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .finish-button:hover {
+        background-color: #005bb5;
+    }
+
+    .paymentimg{
+        background-image: url('https://images.news18.com/ibnlive/uploads/2023/02/tata-cars-in-india-16762558994x3.jpg?impolicy=website&width=640&height=480');
+         background-size: cover;
+          background-repeat: no-repeat; 
+          min-height: 100vh;
+    }

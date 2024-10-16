@@ -1,0 +1,65 @@
+<template>
+    <div class="slds-p-around_medium">
+        <!-- Combo box to select type of payment -->
+        <lightning-combobox
+            name="paymentType"
+            label="Type of Payment"
+            value={paymentType}
+            options={paymentOptions}
+            onchange={handlePaymentTypeChange}>
+        </lightning-combobox>
+
+        <!-- EMI Calculator section -->
+        <template if:true={showEmiCalculator}>
+            <lightning-card title="EMI Calculator" class="emicard">
+                <lightning-input 
+                    label="Price (INR)" 
+                    type="number" 
+                    value={price} 
+                    onchange={handleInputChange} 
+                    data-id="price"
+                    disabled>
+                </lightning-input>
+                <lightning-input 
+                    label="Down Payment (INR)" 
+                    type="number" 
+                    value={downPayment} 
+                    onchange={handleInputChange} 
+                    data-id="downPayment">
+                </lightning-input>
+                <lightning-input 
+                    label="Loan Amount (INR)" 
+                    type="number" 
+                    value={loanAmount} 
+                    disabled>
+                </lightning-input>
+                <lightning-input 
+                    label="Rate of Interest (%)" 
+                    type="number" 
+                    value={rateOfInterest} 
+                    onchange={handleInputChange} 
+                    data-id="rateOfInterest"
+                    disabled>
+                </lightning-input>
+                <lightning-input 
+                    label="Tenure (Months)" 
+                    type="number" 
+                    value={tenure} 
+                    onchange={handleInputChange} 
+                    data-id="tenure">
+                </lightning-input>
+
+                <div class="slds-m-top_medium">
+                    <lightning-button label="Get EMI" onclick={calculateEMI} class="slds-button slds-button_variant-success slds-m-right_small"></lightning-button>
+                    <lightning-button label="Reset" onclick={resetFields} class="slds-button slds-button_variant-destructive"></lightning-button>
+                </div>
+
+                <template if:true={emi}>
+                    <div class="emi-result">
+                        <p>EMI: ₹{emi}</p>
+                    </div>
+                </template>
+            </lightning-card>
+        </template>
+    </div>
+</template>

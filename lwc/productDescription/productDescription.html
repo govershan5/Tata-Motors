@@ -1,0 +1,154 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+  <html>
+    <body>
+<template>
+    <template if:true={prodis}>
+    <!-- <lightning-card title="Product List">
+        <div class="slds-m-around_medium">
+            <template for:each={products} for:item="product">
+                <div key={product.Id} class="slds-box slds-m-bottom_small product-card">
+                    <img src={product.Product_Image_URL__c} alt={product.Name} class="product-image" />
+                    <div class="slds-text-heading_medium slds-m-top_small"><h4>
+                        Hello from h4
+                    </h4>{product.Id}</div>
+                    <div class="slds-text-body_regular">
+                        <img src={defaultImage} alt="Nexon">
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card> -->
+        <!-- <lightning-card title="Car Products">
+            <div class="slds-grid slds-wrap slds-p-around_medium">
+                <template for:each={Carproducts} for:item="product">
+                    <div key={product.id} class="slds-col slds-size_1-of-3 slds-p-around_small">
+                        <lightning-card>
+                            <div class="slds-card__header slds-grid">
+                                <img src={product.imageUrl} alt="Car Image" class="product-image" />
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </lightning-card> -->
+        <!-- <lightning-card title="360 Degree Car Preview">
+            <div class="slds-p-around_medium" >
+                <div id="carPreview" class="car-preview" style="width:100%;height:500px"></div>
+            </div>
+        </lightning-card> -->
+ 
+        <div class="background-video-container" >
+            <video autoplay muted loop preload="auto" class="background-video"> 
+                <source src={backgroundVideoUrl}  type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            </div>
+            <div class="carClass">
+
+            <div title="360 Car View" class="light-container">
+                <h1>Try our 360 Model</h1>
+            <p>Click on the 360 view to view the car</p>
+                <div  class="containercar">
+                    <div class="car-view" onmousedown={startDrag} onmousemove={onDrag} onmouseup={endDrag} onmouseleave={endDrag}>
+                        <img src={currentImage} alt="Car 360 view"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="background">
+                
+            <div class="card-container">
+                <template for:each={carProduct} for:item="card">
+                    <div key={card.Id} class="card">
+                        <div class="card-image" >
+                            <img src={card.ImageUrl__c} alt={card.title} />
+                        </div>
+                        <div class="card-details">
+                            <h1>{card.Name}</h1>
+                            <p>Starts from {card.price}</p>
+                        </div>
+                        <div class="card-buttons">
+                            
+                            <button class="booknow-button" data-id={card.Id} onclick={disTinf}>View Details</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+              
+            <div id="einstein-bot-container" class="einstein-bot-container">
+<!-- 
+                <iframe src={visualforceUrl} id="iframe1"  onclick={reszeIframe} >
+            
+                </iframe> -->
+            </div>
+
+
+        </template>
+        <!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+<template if:true={proInf}>
+    <div class="container">
+        <div class="text-section">
+            <template for:each={productInfo} for:item="product">
+
+                <h1 key={product.id}>The New {product.Product2.Name}</h1>
+                <p key={product.id}>  
+                               {product.Product2.Description}     
+                </p>
+            </template>
+            <div class="buttons" >
+                <button class="book-now">Book Now</button>
+                <button class="test-drive">Schedule a Test Drive</button>
+            </div>
+        </div>
+        <div class="image-section" >
+            
+            <img src={carImageUrl} alt="Car Image" class="car-image">
+            <div class="color-options">
+                <h1>${carImageUrl}</h1>
+                <button class="color-circle" style="background-color: #8B7355;" data-color="brown" onclick={handleColor} ></button>
+                <button class="color-circle" style="background-color: #FFFFFF;" data-color="white" onclick={handleColor}></button>
+                <button class="color-circle" style="background-color: #1E3A5F;" data-color="blue"  onclick={handleColor}></button>
+                <button class="color-circle" style="background-color: #000000;"  data-color="black" onclick={handleColor}></button>
+            </div>
+        </div>
+
+
+    </div>
+    <template if:true={productInfo}>
+        <div class="car-features">
+            <template for:each={productInfo} for:item="carInfo">
+                <div key={carInfo.Id} class="info-items">
+                    <!-- <strong>Mileage:</strong> {carInfo.Product2.Name}<br> -->
+                    <div class="info-item"><strong>Mileage:</strong>{carInfo.Product2.Mileage__c} km/l</div>
+                    <div class="info-item"><strong>Price:</strong> {carInfo.UnitPrice}</div>
+                    <div class="info-item"><strong>Type:</strong> Automatic</div>
+                    <strong>Price:</strong> <br>
+                    
+                    
+                </div>
+            </template>
+        </div>
+    </template>
+   
+</template>
+
+
+</template>
+</body>
+
+</html>

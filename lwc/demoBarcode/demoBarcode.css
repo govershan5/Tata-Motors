@@ -1,0 +1,26 @@
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.qrcode {
+    width: 200px;
+    height: 200px;
+}
+.qr-code-container {
+    text-align: center;
+}
+
+.qrcode {
+    margin-bottom: 5px; /* Space between QR code and timer */
+}
+
+.timer {
+    font-size: 24px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Optional: Change color */
+    margin-top: 10px; /* Space above the timer */
+}

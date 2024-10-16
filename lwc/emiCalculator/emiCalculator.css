@@ -1,0 +1,48 @@
+/* Style for the Lightning Card containing the EMI Calculator */
+.emicard {
+    background: #f3f4f6; /* Light gray background */
+    border: 1px solid #d8dde6; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for depth */
+    width: 100%; /* Full width */
+    max-width: 500px; /* Maximum width */
+    margin: 0 auto; /* Center align horizontally */
+}
+
+/* Padding around the content inside the Lightning Card */
+.slds-p-around_medium {
+    padding: 20px;
+}
+
+/* Margin between elements */
+.slds-m-top_medium {
+    margin-top: 20px;
+}
+
+/* Styling for the Get EMI and Reset buttons */
+.slds-button {
+    padding: 10px 20px; /* Padding inside the buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Specific styles for the Get EMI button */
+.slds-button_variant-success {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    margin-right: 10px; /* Right margin */
+}
+
+/* Specific styles for the Reset button */
+.slds-button_variant-destructive {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+}
+
+/* Style for the EMI amount display */
+.emi-result {
+    text-align: center; /* Center align text */
+    font-size: 1.5em; /* Larger font size */
+    color: red; /* Red text color */
+    margin-top: 20px; /* Top margin */
+}

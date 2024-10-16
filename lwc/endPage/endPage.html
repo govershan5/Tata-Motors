@@ -1,0 +1,82 @@
+<template>
+    <lightning-card class="paymentimg">
+        <div class="one">
+            <div class="nav">
+				<!--Logo-->
+				<a href="#" class="logo"><span class="tata">Tata </span><span class="motors">Motors</span></a>
+				<ul class="navbar">
+					<li><a onclick={cback}>Home</a></li>
+				</ul>
+			</div>
+            <lightning-progress-indicator current-step={step} type="base" variant="base">
+                <lightning-progress-step label="Step 1" value="1" data-id="1" onclick={sone}></lightning-progress-step>
+                <lightning-progress-step label="Step 2" value="2" data-id="2" onclick={stwo}></lightning-progress-step>
+                <lightning-progress-step label="Step 3" value="3" data-id="3" onclick={sthree}></lightning-progress-step>
+                <lightning-progress-step label="Step 4" value="4" data-id="4" onclick={sfour}></lightning-progress-step>
+                <lightning-progress-step label="Step 5" value="5" data-id="5" onclick={sfive}></lightning-progress-step>
+            </lightning-progress-indicator>
+
+            <template if:true={one}>
+                <div class="step-container">
+                    <c-find-dealer ondealers={oneto2} onback1child={cback} ></c-find-dealer>
+                </div>
+            </template>
+
+            <!-- payment details -->
+            <template if:true={two}>
+                <div class="step-container1">
+                   
+                    <lightning-card title="Payment Details">
+                    <lightning-input label="Product Name" value={gName} readonly></lightning-input>
+                    <lightning-input label="Price" value={gPrice} readonly></lightning-input>
+                    
+                        <div class="slds-p-around_medium">
+                            <template if:true={accountName}>
+                                <p>Account Name: {accountName}</p>
+                                </template>
+                                <template if:true={error}>
+                                    <p>Error retrieving account details: {error}</p>
+                                    </template>
+                                    </div>
+                    </lightning-card>
+                    <c-emi-calculator
+                        price={gPrice}
+                        onemicalculatedetails={handleEmiDetails}
+                        >
+                    </c-emi-calculator>
+                    <button class="back-button" onclick={goToPreviousStep}>Back</button>
+                    <button class="proceed-button" onclick={goToPaymentMethod}>Next: Payment Method</button>
+                </div>
+
+            </template>
+
+            <!-- payment selection -->
+            <c-paymentmode if:true={three} onnexts={goToReviewAndPay} onback={back3} onbacks={goToPreviousStep}  ></c-paymentmode>
+
+            <!-- review and pay -->
+            <template if:true={four}>
+                <div class="step-container3">
+                    <h1>Review and Pay</h1>
+                    <p>Review your payment details and click confirm to proceed.</p>
+                    <h1>Account Name:{accountName}</h1>
+                    <h4>Loan Amount:{loanAmount}</h4>
+                    <h4>Rate of Interest:{rateOfInterest}</h4>
+                    <h4>Emi :{emi}</h4>
+
+                    <button class="back-button" onclick={goToPreviousStep}>Back</button>
+                    <button class="proceed-button" onclick={confirmPayment} >Confirm Payment</button>
+                </div>
+            </template>
+
+            <!-- orders summary page -->
+            <template if:true={five}>
+                <div class="step-container4">
+                    <h1>Order Summary</h1>
+                    <p>Your order has been placed successfully! Thank you for your purchase.</p>
+                    <p>Order Number: {orderNumber}</p>
+                    <button class="finish-button" onclick={finishOrder}>Finish</button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,8 @@
+<template>
+    <div class="qr-code-container">
+        <div class="qrcode" style={qrCodeStyle}></div>
+        <div class="timer" style="font-size: 24px; margin-top: 10px;">{timer}</div>
+        <div class="expired-message" style={expiredMessageStyle}>The QR code has expired. Please Go Back and Start the Process.</div>
+          <button class="proceed-button" onclick={goToReviewAndPay}>Next: Review and Pay</button>
+    </div>
+</template>

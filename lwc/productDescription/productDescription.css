@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+.background {
+    background-color: black;
+    color: white; /* Ensures text is readable against black background */
+    align-items: center;
+    width: 100vw;
+}
+body, html {
+   width: 100%;
+   height: 100%;
+}
+.background-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 70vh; /* Adjust the height as needed */
+}
+
+.einstein-bot-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    /* Adjust height as needed */
+    z-index: 1000; /* Ensure it's on top */
+    background-color: white; /* Optional: Add background color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add shadow for better visibility */
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+  
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure cards are in a single row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical overflow */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on touch devices */
+    width: 100%;
+   /* Adjust the top margin to match the video height */
+    padding: 20px;
+}
+
+.card-container::-webkit-scrollbar {
+    display: none; /* Hide scroll bar in WebKit browsers */
+}
+
+.card-container {
+    -ms-overflow-style: none; /* Hide scroll bar in Internet Explorer */
+    scrollbar-width: none; /* Hide scroll bar in Firefox */
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    width: 300px;
+    text-align: center;
+    margin: 10px 10px;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.card-details {
+    padding: 15px;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.select-button, .booknow-button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-button:hover, .booknow-button:hover {
+    background-color: #cc0000;
+}
+.containercar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    
+}
+
+.car-view {
+    width: 40vw;
+    height: fit-content;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.car-view img {
+    width: 100vw;
+    height: auto;
+}
+.light-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70vh;
+    width: 100vw;
+}
+
+
+/* ////////////////////////////// */
+
+.car-container {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100vw;
+    margin: auto;
+}
+.carClass{
+    background: #2c3e50; /* Dark blue background */
+    color: #ecf0f1; /* Light text color */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.car-section {
+    width: 100vw;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+
+.car-image-container {
+    position: relative;
+    width: 80vw;
+}
+
+.car-image {
+    width: 100%;
+    border-radius: 10px;
+}
+.description {
+    width: 20vw;
+    display: flex;
+    align-items: flex-start; /* Align text to start */
+    justify-content: center;
+    padding-left: 30px;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.typewriter-text {
+    font-size: 20px;
+    font-weight: bold;
+    white-space: pre-wrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures the text is hidden until typed */
+    position: relative; /* Ensure the cursor is positioned correctly */
+    animation: typing 2s steps(50, end), blink-caret .75s step-end infinite;
+    background-color: black;
+    color: white;
+}
+@keyframes typing {
+    from { width: 0}
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.buy-now {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.car-features {
+    display: flex;
+    justify-content: space-around;
+    background: grey;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info-items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+}
+.info-item{
+    margin: 0px 10px;
+   
+}
+.car-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.color-options {
+    display: flex;
+    align-items: center;
+}
+
+.color-options label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+.color-circle.red {
+    background: red;
+}
+
+.color-circle.blue {
+    background: blue;
+}
+
+.color-circle.black {
+    background: black;
+}
+
+.color-circle.white {
+    background: white;
+}
+:host {
+    display: block;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    width: 100vw;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 40px auto;
+}
+
+.text-section {
+    flex: 1;
+    padding: 40px;
+}
+
+.text-section h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.book-now,
+.test-drive {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.book-now {
+    background-color: #0056b3;
+    color: white;
+}
+
+.test-drive {
+    background-color: transparent;
+    color: #0056b3;
+    border: 2px solid #0056b3;
+}
+
+.image-section {
+    flex: 1;
+    position: relative;
+}
+.image-background {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #cc0000;
+    width: 25vw; /* Half of the viewport width */
+    height: 100%; /* Full height of the image-section */
+    z-index: -11;
+}
+.car-image{
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+.image-section  {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex: 1;
+} .color-options {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}

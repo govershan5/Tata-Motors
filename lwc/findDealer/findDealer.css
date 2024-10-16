@@ -1,0 +1,57 @@
+/* findDealer.css */
+
+/* Container for the entire component */
+:host {
+    display: block;
+    margin: 0 auto; /* Center the component horizontally */
+    max-width: 600px; /* Adjust width as needed */
+}
+
+/* Center the "Find Dealer" card */
+.find-dealer-card {
+    margin: 0 auto; /* Center the card horizontally */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit the maximum width */
+}
+
+/* Flex container for buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 20px; /* Space above buttons */
+}
+
+/* Styling for the Next button */
+.navigation-buttons lightning-button {
+    margin: 0 10px; /* Adjust horizontal spacing between buttons */
+}
+
+/* Styling for the back button */
+.navigation-buttons .back-button {
+    background-color: #16325c; /* Salesforce blue color */
+    color: white; /* Text color */
+}
+
+/* Centering the list of dealers */
+.dealer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    margin-top: 20px; /* Space above dealer details */
+}
+
+/* Styling for dealer cards */
+.dealer-card {
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Space between cards */
+    background-color: #f0f0f0; /* Light background color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* Highlighted border around dealer details */
+.dealer-details-container {
+    border: 2px solid black; /* Black border around dealer details */
+    padding: 10px; /* Padding inside the border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+}

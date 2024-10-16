@@ -1,0 +1,54 @@
+<template>
+    <div class="step-container2">
+        <h1>Payment Method</h1>
+        <lightning-combobox 
+            label="Select Payment Method"
+            value={selectedPaymentMethod}
+            placeholder="Select Payment Method"
+            options={paymentMethodOptions}
+            onchange={handlePaymentMethodChange}>
+        </lightning-combobox>
+
+        <!-- <template if:true={isUPI}>
+            <lightning-input 
+                label="Enter your UPI ID" 
+                value={upiId} 
+                onchange={handleUPIChange}>
+            </lightning-input>
+        </template> -->
+        <c-demo-barcode if:true={isUPI}></c-demo-barcode>
+
+        <template if:true={isCreditOrDebitCard}>
+            <lightning-input 
+                label="Card Number" 
+                value={cardNumber} 
+                onchange={handlePaymentChanges} required>
+            </lightning-input>
+            <lightning-input 
+                label="Expiry Date" 
+                value={expiryDate} 
+                onchange={handlePaymentChanges} required>
+            </lightning-input>
+            <lightning-input 
+                label="CVV" 
+                value={cvv} 
+                onchange={handlePaymentChanges} required>
+            </lightning-input>
+            <button class="proceed-button" onclick={goToReviewAndPay}>Next: Review and Pay</button>
+            <template if:true={errorMessage}>
+    <p class="error-message">{errorMessage}  </p></template>
+        </template>
+
+        <template if:true={isNetBanking}>
+            <lightning-input 
+                label="Enter your Net Banking ID" 
+                value={netBankingId} 
+                onchange={handleNetBankingChange} required>
+            </lightning-input>
+             <button class="proceed-button" onclick={goToReviewAndPayBanking}>Next: Review and Pay</button>
+        </template>
+        <h1>{fetched}</h1>
+        <button class="back-button" onclick={goToPreviousStep}>Back</button>
+        <!-- <button class="proceed-button" onclick={goToReviewAndPay}>Next: Review and Pay</button> -->
+    </div>
+</template>

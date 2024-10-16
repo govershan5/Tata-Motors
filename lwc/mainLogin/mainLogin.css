@@ -1,0 +1,96 @@
+/* loginForm.css */
+ 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ 
+.slds-card_custom {
+    width: 300px; 
+    background-color:aliceblue;
+    box-shadow: 0px 0px 10px azure;
+}
+ 
+.input-field {
+    margin-bottom: 15px;
+}
+ 
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+ 
+.slds-button_brand {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+ 
+.slds-button_brand:hover {
+    background-color: #1565c0; 
+}
+/* extra */
+.logincontainer {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    background-color: beige /* Dark semi-transparent background */
+}
+ 
+.slds-card_custom {
+    background: transparent; /* Transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+ 
+.slds-p-around_medium {
+    padding: 2rem;
+}
+ 
+.input-field1 {
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.2); /* Slightly transparent white background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Adjust padding for better appearance */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+ 
+.input-field1 input {
+    background: transparent; /* Make input field transparent */
+    border: none; /* Remove default border */
+    width: 100%;
+    color: black; /* Text color */
+}
+ 
+.input-field1 input::placeholder {
+    color: rgba(0, 0, 0, 0.6); /* Placeholder text color */
+}
+ 
+.lightning-button {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.75rem;
+}
+ 
+.error {
+    color: red;
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+ 
+@media (max-width: 600px) {
+    .slds-card_custom {
+        max-width: 90%;
+        padding: 1rem;
+    }
+}

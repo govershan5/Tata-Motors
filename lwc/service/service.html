@@ -1,0 +1,114 @@
+<template>
+    <div style="background-color:white">
+    <header class="header">
+        <div class="logo">
+          <img src={logo} alt="Logo" />
+        </div>
+        <nav class="nav">
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </nav>
+    </header>
+       
+       
+        <div class="container">
+            <div class="bgImage">
+                <img src={image1} alt="Background Image">
+            </div>
+            <lightning-card class="formcard">
+            
+            <div class="form">
+
+                <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DIR000001Ka4w" method="POST">
+                    <input type="hidden" name="orgid" value="00DIR000001Ka4w">
+                <input type="hidden" name="retURL" value="https://www.google.com">
+                <h2 class="section-title">Personal Details</h2>
+                <div class="form-row">
+                    <lightning-input type="text" name="name" label="Name" class="form-item" ></lightning-input>
+                    <lightning-input type="text" name="phone" label="Mobile No." class="form-item" ></lightning-input>
+                </div>
+                <div class="form-row">
+                    <lightning-input type="text" label="City" name="city" class="form-item" ></lightning-input>
+                    <lightning-input type="email" label="Email" name="email" class="form-item" ></lightning-input>
+                </div>
+                
+                <h2 class="section-title">Service Details</h2>
+                <div class="form-row">
+                    <lightning-combobox name="serviceCenter" label="Service Center" class="form-item" options={serviceCenterOptions} ></lightning-combobox>
+                    <lightning-combobox name="model" label="Model" class="form-item" options={modelOptions} ></lightning-combobox>
+                </div>
+                <div class="form-row">
+                    <lightning-input type="text" label="Registration No." class="form-item" ></lightning-input>
+                    <lightning-textarea label="Description" name="description" class="form-item" ></lightning-textarea>
+                </div>
+                <div class="form-row">
+                    <lightning-combobox name="serviceType" label="Service Type" class="form-item" options={serviceTypeOptions} ></lightning-combobox>
+                    <lightning-input type="datetime-local" label="Request Date & Time" class="form-item" ></lightning-input>
+                </div>
+                
+                <lightning-button variant="brand" type="submit"  label="Book Service" title="Book Service"  class="slds-m-top_medium"></lightning-button>
+            </form> </div>
+        </lightning-card>
+            
+        </div>
+    
+   
+    
+        <h1 style="margin:80px ;font-weight:bold; font-size:35px"> Maintainance tips</h1>
+    
+    <div class="card-grid">
+
+    
+        <lightning-card>
+          <img src={image2} alt="Image 6">
+          <div class="description">
+            <h1  style="font-weight:bold;font-size:20px">Watch your speed </h1>
+            <h3 style="font-size:15px">  Avoid over-speeding as it can create safety issues and lead to wear and tear of the  vehicle. </h3>
+          </div>
+        </lightning-card>
+        <lightning-card>
+          <img src={image3} alt="Image 7">
+          <div class="description"><h1 style="font-weight:bold;font-size:20px">Keep distance </h1>
+            <h3 style="font-size:15px">Keep safe distance to minimise damage to your vehicle in case of unforeseen situations on the road. </h3></div>
+        </lightning-card>
+        <lightning-card>
+          <img src={image4} alt="Image 8">
+          <div class="description"><h1  style="font-weight:bold;font-size:20px">Ensure proper fuel usage </h1>
+            <h3 style="font-size:15px"> Follow periodic prompts from your car to ensure proper fuel usage for better performance. </h3></div>
+        </lightning-card>
+        <lightning-card>
+          <img src={image5} alt="Image 8">
+          <div class="description"><h1 style="font-weight:bold;font-size:20px">Avoid Potholes </h1>
+            <h3 style="font-size:15px">Watch out for potholes on the road as they damage  your vehicle's suspension and compromise safety. </h3></div>
+        </lightning-card>
+</div>
+<br><br><br><br><br>
+<footer class="footer">
+    <div class="left-content">
+        <p style="font-size: 20px; font-weight: bold;">Need any personal assistance?</p>
+
+        <p style="font-size:15px">Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p style="font-size:15px">Email: <a href="mailto:example@example.com">example@example.com</a></p>
+    </div>
+    <div class="right-content">
+        <ul class="social-icons">
+            <li><a href="https://www.facebook.com"><img src="" alt="Facebook"></a></li>
+            <li><a href="https://www.twitter.com"><img src="" alt="Twitter"></a></li>
+            <li><a href="https://www.linkedin.com"><img src="" alt="LinkedIn"></a></li>
+            <!-- Add more social media icons as needed -->
+        </ul>
+    </div>
+</footer>
+
+
+
+
+   
+    
+   
+    
+</div>
+  </template>

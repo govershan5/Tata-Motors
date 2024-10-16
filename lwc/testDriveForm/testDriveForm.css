@@ -1,0 +1,90 @@
+/* .slds-p-around_medium {
+    padding: 1rem;
+}
+ 
+.lightning-input {
+    margin-bottom: 1rem;
+}
+ 
+.lightning-button {
+    display: block;
+    margin: 0 auto;
+}
+ 
+.lightning-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+ 
+.slds-card__header-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+ 
+.slds-card__body {
+    background-color: #f4f6f9;
+} */
+
+/* Targeting the label elements within lightning-input */
+
+.test-drive-form {
+    padding: 6rem;
+    background-color: #000;
+    color: #fff; /* Set text color to white */
+    align-items: center;
+}
+
+.form-section, .checkbox-section, .button-section {
+    margin-bottom: 1rem;
+  align-items: center;
+}
+
+.form-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+
+}
+
+.custom-label {
+    flex: 1 1 40%; /* Grow, shrink, and set the base width to 45% */
+    display: flex;
+    flex-direction: column;
+    margin: 10px; /* Add margin for spacing between items */
+}
+
+.custom-label label, .custom-label input, .custom-label select {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.custom-label label {
+    color: white;
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+.custom-label input, .custom-label select {
+    width: 50%; /* Make input/select take full width of .custom-label */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #000; /* Text color of input/select */
+}
+
+.checkbox-section {
+    text-align: center; /* Center the checkbox section */
+    margin-top: 1rem; /* Add some margin for spacing */
+}
+
+.custom-label-checkbox {
+    color: white;
+    font-size: 15px; /* Adjust the font size as needed */
+}
+
+.custom-label-checkbox input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and text */
+    transform: scale(1.2); /* Optional: increase the size of the checkbox */
+}
+
+.button-section {
+    text-align: center;
+}

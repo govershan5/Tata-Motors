@@ -1,0 +1,105 @@
+<template>
+    <template if:true={parent}>
+    <div class="profile-container">
+        <div class="profile-logo" onclick={toggleDropdown}>
+            <!-- Profile Logo Image -->
+            <img src={pro} alt="Profile Logo"/>
+        </div>
+        <div class={dropdownClass}>
+            <ul>
+                <li><lightning-button variant="base" label="Profile" title="Profile" class="dropdown-button" onclick={profun}></lightning-button></li>
+                <li><lightning-button variant="base" label="Cases" title="Cases" class="dropdown-button" onclick={casfun}></lightning-button></li>
+                <li><lightning-button variant="base" label="Product" title="Product" class="dropdown-button" onclick={productfun}></lightning-button></li>
+                <li><lightning-button variant="base" label="TestDrive" title="TestDrive" class="dropdown-button" onclick={tdfun}></lightning-button></li>
+                <li><lightning-button variant="base" label="Log Out" title="Log Out" class="dropdown-button" onclick={logout1}></lightning-button></li>
+            </ul>
+        </div>
+    </div>
+    </template>
+    <template if:true={pf}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open centered-containerG">
+			<div class="slds-modal__container">
+        <lightning-card>
+    <div class="card">
+        <div class="card-header">
+            <img src={pro} class={picadj} alt="Profile Logo"/>
+            <h2 class="user-name">{userName}</h2>
+            <p class="user-title">{userTitle}</p>
+        </div>
+        <div class="card-body">
+            <div class="info-section">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> {userEmail}</p>
+                <p><strong>Phone:</strong> {userPhone}</p>
+                <p><strong>Gender:</strong>{userGender}</p>
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 50%;">
+     <lightning-button variant="neutral" label="Back"  onclick={pfToH} ></lightning-button>
+    </div>
+    </lightning-card>
+    </div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<template if:true={cas}>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open centered-containerG">
+			<div class="slds-modal__container">
+    <template if:true={checkCon}>
+    <lightning-card title="Cases Record">        
+        <lightning-datatable 
+        key-field="id"
+        data={cases} 
+        columns={columnC}
+        >         
+        </lightning-datatable>
+    </lightning-card>
+    <div style="padding-left: 50%;">
+     <lightning-button variant="neutral" label="Back"  onclick={casToH} ></lightning-button>
+    </div>
+    </template>
+    </div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<template if:true={pro7}>
+     <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open centered-containerG">
+			<div class="slds-modal__container">
+    <template if:true={checkPro}>
+    <lightning-card title="Products">        
+        <lightning-datatable 
+        key-field="id"
+        data={product} 
+        columns={columns}
+        >         
+        </lightning-datatable>
+    </lightning-card>
+    <div style="padding-left: 50%;">
+     <lightning-button variant="neutral" label="Back"  onclick={proToH} ></lightning-button>
+    </div>
+    </template>
+    </div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<template if:true={tdv}>
+     <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open centered-containerG">
+			<div class="slds-modal__container">
+    <template if:true={checktd}>
+    <lightning-card title="TestDrives">        
+        <lightning-datatable 
+        key-field="id"
+        data={testDrive} 
+        columns={columnd}
+        >         
+        </lightning-datatable>
+    </lightning-card>
+    <div style="padding-left: 50%;">
+     <lightning-button variant="neutral" label="Back"  onclick={tdToH} ></lightning-button>
+    </div>
+    </template>
+    </div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+</template>

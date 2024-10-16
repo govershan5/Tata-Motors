@@ -1,0 +1,119 @@
+.sign-up-card {
+        margin: auto;
+        max-width: 500px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       min-width:600px;
+       background-color: white;
+    }
+ 
+ .form-title {
+    text-align: center;
+    font-size: 28px; /* Increased font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduced margin for better spacing */
+    color:black;
+    font-family: 'Arial', sans-serif; /* Choose a stylish font */
+    position: relative; /* Positioning for the underline */
+}
+ 
+.form-title::after {
+    content: '';
+    display: block;
+    width: 60%; /* Adjust the width of the underline */
+    height: 2px; /* Thickness of the underline */
+    background-color:black; /* Color of the underline */
+    margin: 10px auto 0; /* Margin for spacing below the title */
+}
+ 
+ 
+     .custom-input ::slotted(label) {
+        color: white;
+    }
+ 
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin:40px;
+      
+    }
+ 
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+ 
+    .custom-button {
+        padding: 10px 20px;
+        background-color:red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+ 
+    .custom-button:hover {
+        background-color:red;
+    }
+     .custom-input .slds-form-element__label {
+        color: white;
+    }
+
+    .centered-containerG {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.slds-modal__container {
+    width: 50%;
+    max-width: 40rem;
+    border-radius: 15px;
+   
+}
+ 
+.slds-modal__header {
+    padding: 10px;
+    border-bottom: 1px solid #d8dde6;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+ 
+.slds-modal__footer{
+    border-top: 1px solid #d8dde6;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+  
+}
+.slds-backdrop {
+    opacity: 0.6;
+    animation: fadeInBackdrop 0.3s ease-in-out;
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+ 
+@keyframes fadeInBackdrop {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.6;
+    }
+}

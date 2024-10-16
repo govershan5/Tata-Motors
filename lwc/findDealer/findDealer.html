@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Find Dealer" class="find-dealer-card">
+        <div class="slds-p-around_medium">
+            <!-- State combobox -->
+            <lightning-combobox
+                name="state"
+                label="Select State"
+                value={selectedState}
+                placeholder="Select State"
+                options={stateOptions}
+                onchange={handleStateChange}
+                required
+                aria-required="true">
+            </lightning-combobox>
+
+            <!-- City combobox -->
+            <lightning-combobox
+                name="city"
+                label="Select City"
+                value={selectedCity}
+                placeholder="Select City"
+                options={cityOptions}
+                onchange={handleCityChange}
+                required
+                aria-required="true">
+            </lightning-combobox>
+
+            <!-- Error message display -->
+            <template if:true={errorMessage}>
+                <p class="error-message">{errorMessage}</p>
+            </template>
+
+            <!-- List of dealers -->
+            <template if:true={dealers} class="dealer-list">
+                <div class="dealer-details-container">
+                    <template for:each={dealers} for:item="dealer">
+                        <lightning-card key={dealer.Id} title={dealer.Name} class="dealer-card">
+                            <p class="slds-p-horizontal_small"><b>Phone:</b> {dealer.Phone__c}</p>
+                            <p class="slds-p-horizontal_small"><b>Email:</b> {dealer.Email__c}</p>
+                        </lightning-card>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Navigation buttons -->
+            <div class="navigation-buttons">
+                <lightning-button label="Next" onclick={selected} disabled={isNextDisabled} class="slds-m-top_medium"></lightning-button>
+                <button class="back-button slds-button slds-button_neutral" onclick={child1b}>Back</button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

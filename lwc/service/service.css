@@ -1,0 +1,184 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    padding: 0.5rem 1rem; /* Reduced padding */
+}
+
+.logo img {
+    margin-right: 1rem;
+    width: 30px; /* Reduced width */
+    height: 30px; /* Reduced height */
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end; /* Aligns the nav to the right */
+    padding: 0; /* Removed extra padding */
+}
+
+.nav ul {
+    list-style: none; /* Removes the default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px; /* Space between the nav items */
+}
+
+.nav ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Text color of the nav items */
+    font-size: medium;
+    padding: 10px 15px; /* Padding around the nav items */
+    border-radius: 4px; /* Rounded corners for nav items */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav ul li a:hover {
+    background-color: #575757; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bgImage img {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 5%;
+}
+
+
+.form {
+    width: 400px;
+    background-color:white; 
+    padding: 20px;
+    /* border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    margin-right: 20px;
+
+}
+.formcard{
+    margin-right: 150px;
+    background-color: dimgray;
+  }
+
+.section-title {
+    color: red;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-item {
+    width: 48%;
+}
+
+.slds-m-top_medium {
+    margin-top: 1rem;
+}
+
+
+
+  
+  
+  
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 40px;
+    padding-top: 20px;
+    
+}
+
+.card-grid lightning-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0; /* Remove default padding */
+}
+
+.card-grid lightning-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire card */
+    display: block; /* Ensures there is no extra space around the image */
+    
+}
+
+.card-grid lightning-card .description {
+    margin: 18px;
+
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:50px;
+    
+}
+
+.left-content {
+    text-align: left;
+    margin-left: 40px;
+}
+
+.right-content {
+    text-align: right;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-left: 10px; /* Adjust spacing between icons */
+}
+
+.social-icons li:first-child {
+    margin-left: 0;
+}
+
+.social-icons li a img {
+    width: 30px; /* Adjust the size of social media icons */
+    height: 30px; /* Adjust the size of social media icons */
+}
